@@ -75,3 +75,28 @@ else{
 Work on getting the html for the first page, showing some instructions with a Start Quiz button.
 
 Create 5 questions and 4 possible instructions to each. One way to store this information is in an array of objects, that each contain the questions, responses, and correct answer. Once you have that information, set up, work on creating a click event for the Start button that displays the first question from the array with a list of buttons for the responses that each have a click event to check if the one selected was correct and to display the next question. I recommend saving the timer and the storing scores in local storage features for last.
+
+
+
+
+
+cycle through divs one will be showing at a time while the others are hidden
+
+create event listeners for each button on each div:
+  - correct buttons will display correct in the bottom and add a point to the tally
+  - incorrect buttons will display incorrect in the bottom and subtract time
+every option button will hide current div and reveal(block) the next one 
+
+create css file to manage hidden and unhidden styles 
+
+.hidden{
+  display = none
+}
+
+.reveal{
+  display = block
+}
+
+OR
+
+use java script to change display when button is clicked on every button
