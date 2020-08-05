@@ -68,6 +68,25 @@ startButton.addEventListener("click", function(event){
     score.innerHTML = "Score: " + tally;
 });
 
+//"block" each question div 
+//work on functionality of each button in each div
+//wrong -time & display in status div WRONG
+//right +tally & display in status div RIGHT
+//all buttons will hide current div and reveal the next one
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
