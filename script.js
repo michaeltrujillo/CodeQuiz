@@ -51,8 +51,8 @@ let option4d = document.getElementById("option4d")
 let questionArr = [
 { q: "wut0", o1: "0a", o2: "0b", o3: "0c", o4: "0d" },
 { q: "wut1", o1: "1a", o2: "1b", o3: "1c", o4: "1d" },
-{ q: "wut2", o1: "2a", o2: "2b", o2: "2c", o4: "2d" },
-{ q: "wut3", o1: "3a", o2: "3b", o3: "3c", o3: "3d" },
+{ q: "wut2", o1: "2a", o2: "2b", o3: "2c", o4: "2d" },
+{ q: "wut3", o1: "3a", o2: "3b", o3: "3c", o4: "3d" },
 { q: "wut4", o1: "4a", o2: "4b", o3: "4c", o4: "4d" },
 ]
 
@@ -69,17 +69,13 @@ startButton.addEventListener("click", function(event){
     startBox.innerHTML = "";
     questionBox0.style.display = "block"
     score.innerHTML = "Score: " + tally;
+    //start timer
 });
-
-//"block" each question div 
-//work on functionality of each button in each div
-//wrong -time & display in status div WRONG
-//right +tally & display in status div RIGHT
-//all buttons will hide current div and reveal the next one
-
 
 //first question & options
 //is revealed by start button
+//if timer = 0 endBox.style.display = "block"
+//current div.style.display = "none"
 
         question0.innerHTML = questionArr[0].q;
         option0a.innerHTML = questionArr[0].o1;
@@ -120,6 +116,8 @@ startButton.addEventListener("click", function(event){
 
 //second question & options
 //is revealed by buttons on first question
+//if timer = 0 endBox.style.display = "block"
+//current div.style.display = "none"
 
         question1.innerHTML = questionArr[1].q;
         option1a.innerHTML = questionArr[1].o1;
@@ -157,78 +155,136 @@ startButton.addEventListener("click", function(event){
             questionBox2.style.display = "block";
         });
 
+//third question & options
+//is revealed by buttons on second question
+//if timer = 0 endBox.style.display = "block"
+//current div.style.display = "none"
+
+        question2.innerHTML = questionArr[2].q;
+        option2a.innerHTML = questionArr[2].o1;
+        option2b.innerHTML = questionArr[2].o2;
+        option2c.innerHTML = questionArr[2].o3;
+        option2d.innerHTML = questionArr[2].o4;
+
+        option2a.addEventListener("click", function(event){
+            //right answer
+            status.innerHTML = "Correct!";
+            tally++;
+            score.innerHTML = "Score: " + tally;
+            questionBox2.style.display = "none";
+            questionBox3.style.display = "block";
+        });
+        option2b.addEventListener("click", function(event){
+            //wrong answer
+            //subtract time
+            status.innerHTML = "Wrong!";
+            questionBox2.style.display = "none";
+            questionBox3.style.display = "block";
+        });
+        option2c.addEventListener("click", function(event){
+            //wrong answer
+            //subtract time
+            status.innerHTML = "Wrong!";
+            questionBox2.style.display = "none";
+            questionBox3.style.display = "block";
+        });
+        option2d.addEventListener("click", function(event){
+            //wrong answer
+            //subtract time
+            status.innerHTML = "Wrong!";
+            questionBox2.style.display = "none";
+            questionBox3.style.display = "block";
+        });
+
+//third question & options
+//is revealed by buttons on second question
+//if timer = 0 endBox.style.display = "block"
+//current div.style.display = "none"
+
+        question3.innerHTML = questionArr[3].q;
+        option3a.innerHTML = questionArr[3].o1;
+        option3b.innerHTML = questionArr[3].o2;
+        option3c.innerHTML = questionArr[3].o3;
+        option3d.innerHTML = questionArr[3].o4;
+
+        option3a.addEventListener("click", function(event){
+            //right answer
+            status.innerHTML = "Correct!";
+            tally++;
+            score.innerHTML = "Score: " + tally;
+            questionBox3.style.display = "none";
+            questionBox4.style.display = "block";
+        });
+        option3b.addEventListener("click", function(event){
+            //wrong answer
+            //subtract time
+            status.innerHTML = "Wrong!";
+            questionBox3.style.display = "none";
+            questionBox4.style.display = "block";
+        });
+        option3c.addEventListener("click", function(event){
+            //wrong answer
+            //subtract time
+            status.innerHTML = "Wrong!";
+            questionBox3.style.display = "none";
+            questionBox4.style.display = "block";
+        });
+        option3d.addEventListener("click", function(event){
+            //wrong answer
+            //subtract time
+            status.innerHTML = "Wrong!";
+            questionBox3.style.display = "none";
+            questionBox4.style.display = "block";
+        });
+
+//third question & options
+//is revealed by buttons on second question
+//if timer = 0 endBox.style.display = "block"
+//current div.style.display = "none"
+
+        question4.innerHTML = questionArr[4].q;
+        option4a.innerHTML = questionArr[4].o1;
+        option4b.innerHTML = questionArr[4].o2;
+        option4c.innerHTML = questionArr[4].o3;
+        option4d.innerHTML = questionArr[4].o4;
+
+        option4a.addEventListener("click", function(event){
+            //right answer
+            status.innerHTML = "";
+            tally++;
+            score.innerHTML = tally +" out of 5 correct!";
+            questionBox4.style.display = "none";
+            end.style.display = "block";
+        });
+        option4b.addEventListener("click", function(event){
+            //wrong answer
+            //subtract time
+            status.innerHTML = "";
+            score.innerHTML = tally +" out of 5 correct!";
+            questionBox4.style.display = "none";
+            end.style.display = "block";
+        });
+        option4c.addEventListener("click", function(event){
+            //wrong answer
+            //subtract time
+            status.innerHTML = "";
+            score.innerHTML = tally +" out of 5 correct!";
+            questionBox4.style.display = "none";
+            end.style.display = "block";
+        });
+        option4d.addEventListener("click", function(event){
+            //wrong answer
+            //subtract time
+            status.innerHTML = "";
+            score.innerHTML = tally +" out of 5 correct!";
+            questionBox4.style.display = "none";
+            end.style.display = "block";
+        });
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-    //  // for loop to select question and options
-    // for (let i = 0; i < questionArr.length; i++) {
-
-    //     // question.innerHTML = questionArr[i].q;
-    //     // option1.innerHTML = questionArr[i].o1;
-    //     // option2.innerHTML = questionArr[i].o2;
-    //     // option3.innerHTML = questionArr[i].o3;
-    //     // option4.innerHTML = questionArr[i].o4;
-
-    //     // create if statement for wrong or right answer
-
-    //     // if index = 0 && user selects right answer
-    //     // append correct in status div score++
-    //     // else append wrong in status div timer - 5 seconds
-    //     //then index++ 
-
-    //    if (i === 0) {
-    //     question.innerHTML = questionArr[0].q;
-    //     option1.innerHTML = questionArr[0].o1;
-    //     option2.innerHTML = questionArr[0].o2;
-    //     option3.innerHTML = questionArr[0].o3;
-    //     option4.innerHTML = questionArr[0].o4;
-
-    //     option1.addEventListener("click", function(event) {
-    //         status.innerHTML = "Correct!";
-    //         tally++;
-    //         score.innerHTML = "Score: " + tally;
-    //         i++; 
-    //         console.log(i);
-    //     });
-    //     option2.addEventListener("click", function(event) {
-    //         status.innerHTML = "Wrong!";
-    //         i++; 
-    //     });
-    //     option3.addEventListener("click", function(event) {
-    //         status.innerHTML = "Wrong!";
-    //         i++; 
-    //     });
-    //     option4.addEventListener("click", function(event) {
-    //         status.innerHTML = "Wrong!";
-    //         i++; 
-    //     });
-    //     
-
-
-
-    //     // if (i===0) {
-    //     //     question.innerHTML = questionArr[0].q0;
-    //     // }else if (i===1) {
-    //     //     question.innerHTML = questionArr[1].q1;
-    //     // }else if (i===2) {
-    //     //     question.innerHTML = questionArr[2].q2;
-    //     // } else if(i===3){
-    //     //     question.innerHTML = questionArr[3].q3;
-    //     // }else if(i===4) {
-    //     //     question.innerHTML = questionArr[4].q4;
-    //     // };
     //     //if timer === 0 or all questions answered 
     //     // display leader board
     //     // ask user for initials
