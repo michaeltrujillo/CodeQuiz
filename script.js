@@ -289,5 +289,5 @@ startButton.addEventListener("click", function(event){
     //     // display leader board
     //     // ask user for initials
     //     // user types initials and score is placed in order 
-    //     //
+    //     //if timer = 0 display "out of time!"
     // };
