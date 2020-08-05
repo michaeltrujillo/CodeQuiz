@@ -1,43 +1,44 @@
+//start page
 let startButton = document.querySelector("#startBtn")
 let startBox = document.getElementById("startBox")
-
+//score keeper
 let score = document.getElementById("score")
 let tally = 0
-
+//tells if answer was correct
 let status = document.getElementById("rightWrong")
-
+//appears when quiz is over
 let end = document.getElementById("endBox")
-
+//selects the question divs
 let questionBox0 = document.getElementById("questionBox0")
 let questionBox1 = document.getElementById("questionBox1")
 let questionBox2 = document.getElementById("questionBox2")
 let questionBox3 = document.getElementById("questionBox3")
 let questionBox4 = document.getElementById("questionBox4")
-
+//chooses first item in array
 let question0 = document.getElementById("question0")
 let option0a = document.getElementById("option0a")
 let option0b = document.getElementById("option0b")
 let option0c = document.getElementById("option0c")
 let option0d = document.getElementById("option0d")
-
+//chooses second item in array
 let question1 = document.getElementById("question1")
 let option1a = document.getElementById("option1a")
 let option1b = document.getElementById("option1b")
 let option1c = document.getElementById("option1c")
 let option1d = document.getElementById("option1d")
-
+//chooses third item in array
 let question2 = document.getElementById("question2")
 let option2a = document.getElementById("option2a")
 let option2b = document.getElementById("option2b")
 let option2c = document.getElementById("option2c")
 let option2d = document.getElementById("option2d")
-
+//chooses fourth item in array
 let question3 = document.getElementById("question3")
 let option3a = document.getElementById("option3a")
 let option3b = document.getElementById("option3b")
 let option3c = document.getElementById("option3c")
 let option3d = document.getElementById("option3d")
-
+//chooses fifth item in array
 let question4 = document.getElementById("question4")
 let option4a = document.getElementById("option4a")
 let option4b = document.getElementById("option4b")
@@ -51,7 +52,7 @@ let questionArr = [
 { q: "wut3", o1: "3a", o2: "3b", o3: "3c", o4: "3d" },
 { q: "wut4", o1: "4a", o2: "4b", o3: "4c", o4: "4d" },
 ];
-
+//initially hides all divs except the starting page
 questionBox0.style.display = "none"
 questionBox1.style.display = "none"
 questionBox2.style.display = "none"
@@ -63,16 +64,16 @@ end.style.display = "none"
 let timer = document.getElementById("timer");
 let noTime = document.getElementById("outOfTime");
 
-var secondsLeft = 30;
-
+var secondsLeft = 31;
+// displays a countdown
 function setTime() {
   var timerInterval = setInterval(function() {
     secondsLeft--;
-    timer.textContent = secondsLeft + " seconds left until game over";
+    timer.textContent = secondsLeft;
 
+    //when countdown goes to 0 all divs except the last div will be hidden
     if(secondsLeft === 0) {
       clearInterval(timerInterval);
-    //   sendMessage();
         questionBox0.style.display = "none";
         questionBox1.style.display = "none";
         questionBox2.style.display = "none";
@@ -84,7 +85,7 @@ function setTime() {
   }, 1000);
 };
 
-// beginning
+// starting page with start button 
 
 startButton.addEventListener("click", function(event){
     startBox.innerHTML = "";
@@ -96,8 +97,6 @@ startButton.addEventListener("click", function(event){
 
 //first question & options
 //is revealed by start button
-//if timer = 0 endBox.style.display = "block"
-//current div.style.display = "none"
 
         question0.innerHTML = questionArr[0].q;
         option0a.innerHTML = questionArr[0].o1;
@@ -218,10 +217,8 @@ startButton.addEventListener("click", function(event){
             questionBox3.style.display = "block";
         });
 
-//third question & options
-//is revealed by buttons on second question
-//if timer = 0 endBox.style.display = "block"
-//current div.style.display = "none"
+//forth question & options
+//is revealed by buttons on third question
 
         question3.innerHTML = questionArr[3].q;
         option3a.innerHTML = questionArr[3].o1;
@@ -259,10 +256,8 @@ startButton.addEventListener("click", function(event){
             questionBox4.style.display = "block";
         });
 
-//third question & options
-//is revealed by buttons on second question
-//if timer = 0 endBox.style.display = "block"
-//current div.style.display = "none"
+//fifth question & options
+//is revealed by buttons on forth question
 
         question4.innerHTML = questionArr[4].q;
         option4a.innerHTML = questionArr[4].o1;
@@ -310,5 +305,3 @@ startButton.addEventListener("click", function(event){
     //     // display leader board
     //     // ask user for initials
     //     // user types initials and score is placed in order 
-
-  
