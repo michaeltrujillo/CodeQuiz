@@ -1,21 +1,6 @@
 # CodeQuiz
 This is homework number 4. Code quiz.
 
-
-create the timer
-is displayed when start button is clicked
-begins when start button is clicked
-once created make sure to make while loop/if statement that checks the time
-
-if timer = 0 endBox.style.display = "block"
-current div.style.display = "none"
-
-if timer = 0 display "out of time!"
-
-
-
-
-
 create leaderboard 
 link button on endBox to leader board file
 local storage will save all tallys with initials

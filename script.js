@@ -3,10 +3,6 @@ let startBox = document.getElementById("startBox")
 
 let score = document.getElementById("score")
 let tally = 0
-// score.innerHTML = "Score: " + tally;
-
-
-let timer = document.getElementById("timer")
 
 let status = document.getElementById("rightWrong")
 
@@ -54,7 +50,7 @@ let questionArr = [
 { q: "wut2", o1: "2a", o2: "2b", o3: "2c", o4: "2d" },
 { q: "wut3", o1: "3a", o2: "3b", o3: "3c", o4: "3d" },
 { q: "wut4", o1: "4a", o2: "4b", o3: "4c", o4: "4d" },
-]
+];
 
 questionBox0.style.display = "none"
 questionBox1.style.display = "none"
@@ -63,13 +59,39 @@ questionBox3.style.display = "none"
 questionBox4.style.display = "none"
 end.style.display = "none"
 
+//timer 
+let timer = document.getElementById("timer");
+let noTime = document.getElementById("outOfTime");
+
+var secondsLeft = 30;
+
+function setTime() {
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timer.textContent = secondsLeft + " seconds left until game over";
+
+    if(secondsLeft === 0) {
+      clearInterval(timerInterval);
+    //   sendMessage();
+        questionBox0.style.display = "none";
+        questionBox1.style.display = "none";
+        questionBox2.style.display = "none";
+        questionBox3.style.display = "none";
+        questionBox4.style.display = "none";
+        end.style.display = "block";
+        noTime.innerHTML = "You ran out of time!";
+    }
+  }, 1000);
+};
 
 // beginning
+
 startButton.addEventListener("click", function(event){
     startBox.innerHTML = "";
     questionBox0.style.display = "block"
     score.innerHTML = "Score: " + tally;
     //start timer
+    setTime();
 });
 
 //first question & options
@@ -285,9 +307,8 @@ startButton.addEventListener("click", function(event){
 
 
 
-    //     //if timer === 0 or all questions answered 
     //     // display leader board
     //     // ask user for initials
     //     // user types initials and score is placed in order 
-    //     //if timer = 0 display "out of time!"
-    // };
+
+  
