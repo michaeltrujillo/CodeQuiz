@@ -46,11 +46,11 @@ let option4c = document.getElementById("option4c")
 let option4d = document.getElementById("option4d")
 
 let questionArr = [
-{ q: "wut0", o1: "0a", o2: "0b", o3: "0c", o4: "0d" },
-{ q: "wut1", o1: "1a", o2: "1b", o3: "1c", o4: "1d" },
-{ q: "wut2", o1: "2a", o2: "2b", o3: "2c", o4: "2d" },
-{ q: "wut3", o1: "3a", o2: "3b", o3: "3c", o4: "3d" },
-{ q: "wut4", o1: "4a", o2: "4b", o3: "4c", o4: "4d" },
+{ q: "#1 What are the steps to make a commit?", o1: "1. Git add -a 2. Git commit -m ‘comment’ 3. Git push", o2: "1. Git add -A 2. Git commit -m ‘comment’ 3. Git push", o3: "1. Git commit -m ‘comment’ 2. Git add -A 3. Git push", o4: "1. Git add 2. Git commit 3. Git pull" },
+{ q: "#2 What css selector selects all elements?", o1: "*", o2: "&", o3: "$", o4: "#" },
+{ q: "#3 What is the term for a true or a false?", o1: "Cooleans", o2: "Fooleans", o3: "Booleans", o4: "Drooleans" },
+{ q: "#4 Where should you place the script tag inside of the html file?", o1: "Before DOCTYPE", o2: "CSS File", o3: "Head", o4: "Bottom of the body tag" },
+{ q: "#5 Where do you place the title tag for an html file?", o1: "Head", o2: "Body", o3: "CSS file", o4: "JavaScript file" },
 ];
 //initially hides all divs except the starting page
 questionBox0.style.display = "none"
@@ -64,7 +64,7 @@ end.style.display = "none"
 let timer = document.getElementById("timer");
 let noTime = document.getElementById("outOfTime");
 
-var secondsLeft = 31;
+var secondsLeft = 61;
 // displays a countdown
 function setTime() {
   var timerInterval = setInterval(function() {
@@ -104,7 +104,7 @@ startButton.addEventListener("click", function(event){
         option0c.innerHTML = questionArr[0].o3;
         option0d.innerHTML = questionArr[0].o4;
 
-        option0a.addEventListener("click", function(event){
+        option0b.addEventListener("click", function(event){
             //right answer
             status.innerHTML = "Correct!";
             tally++;
@@ -112,7 +112,7 @@ startButton.addEventListener("click", function(event){
             questionBox0.style.display = "none";
             questionBox1.style.display = "block";
         });
-        option0b.addEventListener("click", function(event){
+        option0a.addEventListener("click", function(event){
             //wrong answer
             //subtract time
             status.innerHTML = "Wrong!";
@@ -187,7 +187,7 @@ startButton.addEventListener("click", function(event){
         option2c.innerHTML = questionArr[2].o3;
         option2d.innerHTML = questionArr[2].o4;
 
-        option2a.addEventListener("click", function(event){
+        option2c.addEventListener("click", function(event){
             //right answer
             status.innerHTML = "Correct!";
             tally++;
@@ -202,7 +202,7 @@ startButton.addEventListener("click", function(event){
             questionBox2.style.display = "none";
             questionBox3.style.display = "block";
         });
-        option2c.addEventListener("click", function(event){
+        option2a.addEventListener("click", function(event){
             //wrong answer
             //subtract time
             status.innerHTML = "Wrong!";
@@ -226,7 +226,7 @@ startButton.addEventListener("click", function(event){
         option3c.innerHTML = questionArr[3].o3;
         option3d.innerHTML = questionArr[3].o4;
 
-        option3a.addEventListener("click", function(event){
+        option3d.addEventListener("click", function(event){
             //right answer
             status.innerHTML = "Correct!";
             tally++;
@@ -248,7 +248,7 @@ startButton.addEventListener("click", function(event){
             questionBox3.style.display = "none";
             questionBox4.style.display = "block";
         });
-        option3d.addEventListener("click", function(event){
+        option3a.addEventListener("click", function(event){
             //wrong answer
             //subtract time
             status.innerHTML = "Wrong!";
