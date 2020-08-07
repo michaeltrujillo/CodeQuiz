@@ -298,6 +298,9 @@ startButton.addEventListener("click", function(event){
             end.style.display = "block";
         });
 
+        // if( (end.style.display = "block") === true){
+        //     timer.textContent = "";
+        // };
 
 
 
